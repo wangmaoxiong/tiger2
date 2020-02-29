@@ -4,6 +4,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import javax.servlet.ServletConfig;
+import javax.servlet.ServletContext;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -35,6 +36,13 @@ public class HomeServlet extends HttpServlet {
 
         logger.debug("encoding=" + encoding);
         logger.debug("servletName=" + servletConfig.getServletName());
+
+        ServletContext servletContext = getServletContext();
+        //获取服务器真实物理路径
+        String realPath = servletContext.getRealPath("/");
+        logger.debug("realPath=" + realPath);
+        //设置应用级别属性，用于所有用户共享
+        servletContext.setAttribute("rootEmail", "2468461xxx@pp.com");
 
         //重定向到首页
         response.sendRedirect(request.getContextPath() + "/index.jsp");

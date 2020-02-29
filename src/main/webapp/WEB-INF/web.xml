@@ -4,9 +4,16 @@
          xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
          version="4.0">
 
+    <!--应用级参数,javax.servlet.ServletContext 操作-->
+    <context-param>
+        <param-name>adminPhone</param-name>
+        <param-value>10086</param-value>
+    </context-param>
+
     <servlet>
         <servlet-name>homeServlet</servlet-name>
         <servlet-class>com.wmx.tiger2.servlet.HomeServlet</servlet-class>
+        <!--对应 servlet 的参数，使用 javax.servlet.ServletConfig 操作-->
         <init-param>
             <param-name>encoding</param-name>
             <param-value>UTF-8</param-value>
@@ -16,8 +23,18 @@
             <param-value>500M</param-value>
         </init-param>
     </servlet>
+
+    <servlet>
+        <servlet-name>indexServlet</servlet-name>
+        <servlet-class>com.wmx.tiger2.servlet.IndexServlet</servlet-class>
+    </servlet>
+
     <servlet-mapping>
         <servlet-name>homeServlet</servlet-name>
         <url-pattern>/home</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>indexServlet</servlet-name>
+        <url-pattern>/index</url-pattern>
     </servlet-mapping>
 </web-app>
