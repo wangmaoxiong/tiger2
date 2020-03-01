@@ -12,5 +12,8 @@
 </head>
 <body>
 <h3>蚩尤后裔，永世为王！</h3>
+sessionId=<%= session.getId()%>
+<hr/>
+token=${token}
 </body>
 </html>

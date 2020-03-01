@@ -33,6 +33,10 @@
         <servlet-name>worldServlet</servlet-name>
         <servlet-class>com.wmx.tiger2.servlet.WorldServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>marchServlet</servlet-name>
+        <servlet-class>com.wmx.tiger2.servlet.MarchServlet</servlet-class>
+    </servlet>
 
     <servlet-mapping>
         <servlet-name>homeServlet</servlet-name>
@@ -45,6 +49,10 @@
     <servlet-mapping>
         <servlet-name>worldServlet</servlet-name>
         <url-pattern>/world</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>marchServlet</servlet-name>
+        <url-pattern>/march</url-pattern>
     </servlet-mapping>
 
 </web-app>
